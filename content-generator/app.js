@@ -1,6 +1,3 @@
-# File 2: app.js
-# Create this file in the content-generator folder
-
 document.addEventListener('DOMContentLoaded', function() {
     const root = document.getElementById('root');
     
