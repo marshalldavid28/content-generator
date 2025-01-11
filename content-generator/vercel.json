@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "echo 'No build required'",
-  "outputDirectory": ".",
-  "framework": "static",
-  "functions": {
-    "api/generate.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  }
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "*.js", "use": "@vercel/node" },
+    { "src": "api/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
 }
